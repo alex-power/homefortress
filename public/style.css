@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f6f8;
+  color: #1a1a1a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  background: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+}
+
+nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.hero {
+  background: linear-gradient(to right, #2962FF, #009688);
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.cta-button {
+  background: white;
+  color: #2962FF;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #e0e0e0;
+}
+
+.features, .how-it-works, .signup {
+  padding: 4rem 0;
+  background: white;
+}
+
+.features h2, .how-it-works h2, .signup h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.feature h3 {
+  margin-top: 0;
+  color: #2962FF;
+}
+
+.how-it-works ol {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 1rem;
+}
+
+.how-it-works li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.signup input {
+  padding: 0.75rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.signup button {
+  background-color: #2962FF;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signup button:hover {
+  background-color: #0039cb;
+}
+
+.footer {
+  background: #f0f0f0;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.875rem;
+  color: #555;
+}
