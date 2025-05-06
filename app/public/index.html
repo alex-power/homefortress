@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeFortress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="/logo.png" alt="HomeFortress Logo" class="logo" />
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#signup">Sign Up</a>
+        <a href="/demo" class="demo-link">Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Own Your Network. Protect Your Family.</h1>
+      <p class="subtitle">HomeFortress is your plug-and-play solution for complete home internet control and privacy.</p>
+      <a href="#signup" class="cta-button">Join the Waitlist</a>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Why HomeFortress?</h2>
+      <div class="grid">
+        <div class="feature">
+          <h3>Privacy First</h3>
+          <p>Your data stays in your home — no cloud tracking, no subscriptions.</p>
+        </div>
+        <div class="feature">
+          <h3>Parental Controls</h3>
+          <p>Intuitive tools to manage screen time, block content, and monitor activity.</p>
+        </div>
+        <div class="feature">
+          <h3>Plug & Play</h3>
+          <p>No technical knowledge needed. Set up your secure network in minutes.</p>
+        </div>
+        <div class="feature">
+          <h3>Media Server</h3>
+          <p>Store and stream your family's media privately and easily.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <ol>
+        <li>Connect your HomeFortress device to your home router.</li>
+        <li>Open the dashboard on any device — no apps needed.</li>
+        <li>Start managing your network, users, and media with ease.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="signup" class="signup">
+    <div class="container">
+      <h2>Be the First to Know</h2>
+      <p>Enter your email to join the waitlist and get early access.</p>
+     <form id="signup-form">
+  <input type="email" name="email" required />
+  <button type="submit" id="button">
+    <span class="button-text">Submit</span>
+    <span class="loading-spinner hidden">
+      <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    </span>
+  </button>
+  <style>
+    .loading-spinner {
+      display: inline-flex;
+      margin-left: 0.5rem;
+    }
+    .hidden {
+      display: none;
+    }
+    .animate-spin {
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</form>
+
+<script>
+  document.getElementById("signup-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const statusEl = document.getElementById("signup-form");
+
+    fetch("https://script.google.com/macros/s/AKfycbwJ1DeSnIn_TlvQa0gTqHXVEu7x0GX0oiU2fQsL5s6jtxSwcJ5E44FtEaQ-m6ymrFUL0Q/exec", {
+      method: "POST",
+      mode: "no-cors", // Bypass CORS blocking
+      body: JSON.stringify({ email }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(res => res.text())
+    .then(() => {
+      statusEl.classList.remove("hidden");
+      e.target.reset();
+      const button = document.getElementById("button");
+      button.innerHTML = "Submitted!";
+      button.disabled = true;
+      button.style.backgroundColor = "green";
+      button.style.color = "white";
+      button.style.cursor = "not-allowed";
+      statusEl.disabled = true;
+      statusEl.style.cursor = "not-allowed";
+      statusEl.style.border = "none";
+      statusEl.style.padding = "10px";
+      statusEl.style.borderRadius = "5px";
+      
+    })
+    .catch(err => {
+      statusEl.textContent = "Something went wrong. Please try again.";
+      statusEl.classList.remove("text-green-600");
+      statusEl.classList.add("text-red-600");
+      statusEl.classList.remove("hidden");
+      console.log("Error:", err);
+    });
+  });
+</script>
+
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 HomeFortress. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
