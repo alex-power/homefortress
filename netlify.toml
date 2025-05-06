@@ -1,6 +1,6 @@
 [build]
   command = "cd app && pnpm install && pnpm build"
-  publish = "."
+  publish = ".next"
 
 [build.environment]
   NEXT_TELEMETRY_DISABLED = "1"
